@@ -31,9 +31,9 @@ def send():
     X2 = 0
     X3 = 0
     if request.method == "POST":
-        X1 += int(request.form["Price"])
-        X2 += int(request.form["Rating"])
-        X3 += int(request.form["Popularity"])
+        X1 += float(request.form["Price"])
+        X2 += float(request.form["Rating"])
+        X3 += float(request.form["Popularity"])
 
     Xnew = np.asarray([X1,X2,X3])
 
