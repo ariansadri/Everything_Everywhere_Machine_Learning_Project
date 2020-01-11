@@ -7,10 +7,11 @@ import pandas as pd
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from sklearn.externals import joblib
 
 app = Flask(__name__)
 
-model = pickle.load(open('SVCmodel.pkl', 'rb'))
+model = joblib.load("model_standarized")
 
 @app.route("/")
 def home_page():
@@ -35,9 +36,13 @@ def send():
         X3 += int(request.form["Popularity"])
 
     Xnew = np.asarray([X1,X2,X3])
+
     Xnew = Xnew.reshape(1,-1)
-    # Xnew_scalled = X_scaler.transform(Xnew)
+
+    # Xnew_scalled = StandardScaler().transform(Xnew)
+
     ynew = model.predict(Xnew)
+
     ynew_str = str(ynew[0])
 
     return render_template('index.html', variable=ynew_str)
