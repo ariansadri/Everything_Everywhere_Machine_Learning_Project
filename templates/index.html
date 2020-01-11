@@ -42,43 +42,70 @@
             <p></p>
         </div>
 
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default" style="background-color: #4CAEE3">
-                        <h5 style="font-size:15px;color:black;  
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default" style="background-color: #4CAEE3">
+                    <h5 style="font-size:15px;color:black;  
                             text-align:center;">Enter Address or City to Center the Map on</h5>
-                        <input id="CenterBox" type="text" size="63"></input>
-                    </div>
+                    <input id="CenterBox" type="text" size="63"></input>
                 </div>
+            </div>
 
 
-                <!-- <div class="col-md-2"></div> -->
+            <!-- <div class="col-md-2"></div> -->
 
 
-                <div class="col-md-3">
-                    <div class="panel panel-default" style="background-color: #4CAEE3">
-                        <h5 style="font-size:15px;color:black; text-align:center;">Enter Circle of Interest Radius
-                            (Miles)</h5>
-                        <input id="RadiusBox" type="text" size="26.5"></input>
-                    </div>
+            <div class="col-md-3">
+                <div class="panel panel-default" style="background-color: #4CAEE3">
+                    <h5 style="font-size:15px;color:black; text-align:center;">Enter Circle of Interest Radius
+                        (Miles)</h5>
+                    <input id="RadiusBox" type="text" size="26.5"></input>
                 </div>
+            </div>
 
 
-                <!-- <button id="filter-btn" type="button" class="btn btn-default">Search</button>  -->
-                <p style="color: black">Click Button to Update Map</p>
-                <form>
-                    <input id="clickMe" type="button" button style="height:33px;width:180px" value="GO" ,
-                        onclick="getVals()"></input>
-                </form>
+            <!-- <button id="filter-btn" type="button" class="btn btn-default">Search</button>  -->
+            <p style="color: black">Click Button to Update Map</p>
+            <form>
+                <input id="clickMe" type="button" button style="height:33px;width:180px" value="GO" ,
+                    onclick="getVals()"></input>
+            </form>
 
-                <div id="map" style="width: 1140px; height: 600px"> </div>
-                <button id="traffic-b" style="color: black">Traffic</button>
-                <button id="transit-b" style="color:black">Transit</button>
-                <button id="bike-b" style="color:black">Bike</button>
-                <button id="my-loc" style="color:black">My Location</button>
-                <button id="clear" style="color:black">Clear Map</button>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div id="map" style="width: 1140px; height: 600px"> </div>
+        <button id="traffic-b" style="color: black">Traffic</button>
+        <button id="transit-b" style="color:black">Transit</button>
+        <button id="bike-b" style="color:black">Bike</button>
+        <button id="my-loc" style="color:black">My Location</button>
+        <button id="clear" style="color:black">Clear Map</button>
+    </div>
+
+    <!-- Machine Learning FORM!!!!!!!! -->
+    <div class="position-relative">
+        <form method="POST" action="/form">
+            Price:<br>
+            <input type="number" name="Price">
+            <br>
+            Rating:<br>
+            <input type="number" name="Rating">
+            <br>
+            Popularity:<br>
+            <input type="number" name="Popularity">
+            <br>
+            <input type="submit" value="Submit">
+
+
+        </form>
+        <p>Here is your best bet!!!: <strong>{{ variable }}</strong></p>
+    </div>
 
 </body>
 
