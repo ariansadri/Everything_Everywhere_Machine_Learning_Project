@@ -51,9 +51,9 @@ def send():
 
         ynew_str = str(ynew[0])
 
-        d = {'col1': [ynew_str]}
-        df = pd.DataFrame(data=d)
-        df.to_csv('static/js/variable.csv', index=None)
+        # d = {'col1': [ynew_str]}
+        # df = pd.DataFrame(data=d)
+        # df.to_csv('static/js/variable.csv', index=None)
 
 
     return render_template('index.html', variable=ynew_str)
