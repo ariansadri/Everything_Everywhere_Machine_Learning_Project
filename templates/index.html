@@ -43,7 +43,7 @@
         </div>
 
     </div>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -87,27 +87,27 @@
         <button id="my-loc" style="color:black">My Location</button>
         <button id="clear" style="color:black">Clear Map</button>
 
-           <div class="position-relative">
-        <form method="POST" action="/form">
-            Price Range (1-4):<br>
-            <input type="number" name="Price">
-            <br>
-            Rating (1-4.5):<br>
-            <input type="number" step="0.1" name="Rating">
-            <br>
-            Popularity:<br>
-            <input type="number" name="Popularity">
-            <br>
-            <input type="submit" value="Submit">
+        <div class="position-relative">
+            <form method="POST" action="/form">
+                Price Range (1-4):<br>
+                <input type="number" name="Price">
+                <br>
+                Rating (1-4.5):<br>
+                <input type="number" step="0.5" name="Rating">
+                <br>
+                Popularity:<br>
+                <input type="number" name="Popularity">
+                <br>
+                <input type="submit" value="Submit">
 
 
-        </form>
-        <p>Here is your best bet!!!: <strong>{{ variable }}</strong></p>
-    </div>
+            </form>
+            <p>Here is your best bet!!!: <strong>{{ variable }}</strong></p>
+        </div>
     </div>
 
     <!-- Machine Learning FORM!!!!!!!! -->
- 
+
 
 </body>
 
@@ -123,8 +123,7 @@
 
 <script src="../static/js/Zach_js.js"></script>
 
-</div>
-</div>
+
 
 
 <footer class="footer" style="background-color:black" ;>
@@ -133,4 +132,3 @@
 </footer>
 
 
-</div>
