@@ -1,0 +1,105 @@
+<!DOCTYPE html>  
+<html>   
+   
+<head style="background-color:black">  
+   <meta charset="utf-8">  
+   <title>Everything Everywhere</title>  
+   <meta name="viewport" content="width=device-width, initial-scale=1">  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">  
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+   <link rel="stylesheet" href="../static/css/style.css">  
+</head>   
+  
+<body style="background-color: #5ED5EC">  
+    <div class="wrapper">  
+        <div class="row"> 
+            <div class="col-md-12"> 
+                <h1 class = 'text-center' style="font-size: 70px;  
+                    font-weight: bold;color:black;">Everything Everywhere
+                </h1> 
+            </div>
+            <div class="hero text-center">
+            <p></p>  
+        </div>
+
+ 
+        <div class="container">  
+            <div class="row">  
+                <div class="col-md-4">  
+                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
+                        <h5 style="font-size:15px;color:black;  
+                            text-align:center;">Enter Address or City to Center the Map on
+                        </h5> 
+                        <input id="CenterBox" type="text" size="43.9" ></input> 
+                    </div> 
+                </div>  
+
+                
+                <div class="col-md-4">  
+                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
+                        <h5 style="font-size:15px;color:black;  
+                            text-align:center;">Enter Circle of Interest Radius (Miles)
+                        </h5> 
+                        <input id="RadiusBox" type="text" size="43.9" ></input> 
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <form>
+                        <input id="clickMe" type="button" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input>
+                    </form> 
+                    
+                </div>
+                   
+               <div id="map" style = "width: 1000px; height: 600px"> </div>
+               <button id="traffic-b" style="color: black">Traffic</button> 
+	           <button id="transit-b" style="color:black">Transit</button> 
+               <button id="bike-b" style="color:black">Bike</button> 
+               <button id="my-loc" style="color:black">My Location</button> 
+               <button id="clear" style="color:black">Clear Map</button>
+            </div>
+            <div class="position-relative">
+                <form method="POST" action="/form">
+                    Price Range (1-4):<br>
+                    <input type="number" name="Price">
+                    <br>
+                    Rating (1-4.5):<br>
+                    <input type="number" step="0.1" name="Rating">
+                    <br>
+                    Popularity:<br>
+                    <input type="number" name="Popularity">
+                    <br>
+                    <input type="submit" value="Submit">
+        
+        
+                </form>
+                <p>Here is your best bet!!!: <strong>{{ variable }}</strong></p>
+            </div>
+
+            
+            <footer class="footer" style="background-color:black";>  
+                <span class="bottom" style="background-color:black; font-size:70px; text-align:center; ">Everything Everywhere</span>  
+            </footer>
+        </div>
+    </div>
+</body> 
+ 
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>  
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script> 
+<script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script> 
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script> 
+
+ 
+<script src="../static/js/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async
+    defer></script>
+
+<script src="../static/js/Zach_js.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script>
+
+ 
+            </div>  
+        </div>  
+
+ 
+   </div>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>  
