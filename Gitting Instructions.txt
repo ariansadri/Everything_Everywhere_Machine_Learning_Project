@@ -1,9 +1,11 @@
 First (Before you push your changes)
 
-git pull origin master 
+1) git pull origin master 
 
-git add .
+2) git add .
 
-git commit -m "Pushing My Changes"
+3) git commit -m "Pushing My Changes"
 
-git push origin master
+4) git push origin master
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
