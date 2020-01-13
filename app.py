@@ -27,18 +27,18 @@ def home_page():
     return render_template("index.html")
 
 
-@app.route("/earthquake")
-def earthquake():
-    lastdate = "2020-01-07"
-    lastdate_time = datetime.datetime.strptime(lastdate, '%Y-%m-%d')
-    target_date = "2020-01-14"
+# @app.route("/earthquake")
+# def earthquake():
+#     lastdate = "2020-01-07"
+#     lastdate_time = datetime.datetime.strptime(lastdate, '%Y-%m-%d')
+#     target_date = "2020-01-14"
 
-    future_date = datetime.datetime.strptime(target_date, '%Y-%m-%d')
-    datediff = (future_date - lastdate_time).days
-    forecast = earth_model.forecast(steps=datediff)[0]
-    thing = "My forecast for {} is {}".format(future_date, forecast[-1])
+#     future_date = datetime.datetime.strptime(target_date, '%Y-%m-%d')
+#     datediff = (future_date - lastdate_time).days
+#     forecast = earth_model.forecast(steps=datediff)[0]
+#     thing = "My forecast for {} is {}".format(future_date, forecast[-1])
 
-    return jsonify(thing)
+#     return jsonify(thing)
 
 
 @app.route("/earthquake_page",  methods=["GET", "POST"])
@@ -55,7 +55,7 @@ def earthquake2():
         forecast = earth_model.forecast(steps=datediff)[0]
         thing = "My forecast for {} is {}".format(future_date, forecast[-1])
 
-    return render_template("Predict_Earth_Quake.html", variable=thing)
+    return render_template("index.html", prediction=thing)
 # return render_template('Predict_Earth_Quake.html')
 
 
