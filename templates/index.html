@@ -10,8 +10,8 @@
    <link rel="stylesheet" href="../static/css/style.css">  
 </head>   
   
-<body style="background-color: #5ED5EC">  
-    <div class="wrapper">  
+<body style="background-color: #4F5758">  
+    <div class="wrapper">
         <div class="row"> 
             <div class="col-md-12"> 
                 <h1 class = 'text-center' style="font-size: 70px;  
@@ -21,44 +21,63 @@
             <div class="hero text-center">
             <p></p>  
         </div>
-
- 
         <div class="container">  
             <div class="row">  
-                <div class="col-md-4">  
-                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
-                        <h5 style="font-size:15px;color:black;  
-                            text-align:center;">Enter Address or City to Center the Map on
-                        </h5> 
-                        <input id="CenterBox" type="text" size="43.9" ></input> 
-                    </div> 
+                <div class="col-md-4">
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <ul class="list-group" id="filters">
+                                    <li class="filter list-group-item">
+                                        <label for="date">Enter a City or Address</label>
+                                        <input id="CenterBox" type="text" size="40" ></input>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <ul class="list-group" id="filters">
+                                <li class="filter list-group-item">
+                                    <label for="date">Enter a Weather</label>
+                                    <input id="Fake" type="text" size="40" ></input>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
                 </div>  
-
-                
-                <div class="col-md-4">  
-                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
-                        <h5 style="font-size:15px;color:black;  
-                            text-align:center;">Enter Circle of Interest Radius (Miles)
-                        </h5> 
-                        <input id="RadiusBox" type="text" size="43.9" ></input> 
+                <div class="col-md-4">
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <ul class="list-group" id="filters">
+                                    <li class="filter list-group-item">
+                                        <label for="date">Enter a Circle of Interest</label>
+                                        <input id="RadiusBox" type="text" size="40" ></input>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                        <button id="filter-btn" type="button" class="btn btn-default">Search</button>
                     </div>
                 </div> 
                 <div class="col-md-4">
                     <form>
-                        <input id="clickMe" type="button" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input>
+                        <!-- <input id="clickMe" type="button" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input> -->
+                        <input id="clickMe" type="button" class="btn btn-default" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input>
                     </form> 
                     
                 </div>
                    
-               <div id="map" style = "width: 1000px; height: 600px"> </div>
+               <div id="map" style = "width: 1200px; height: 600px"> </div>
                <button id="traffic-b" style="color: black">Traffic</button> 
 	           <button id="transit-b" style="color:black">Transit</button> 
                <button id="bike-b" style="color:black">Bike</button> 
                <button id="my-loc" style="color:black">My Location</button> 
                <button id="clear" style="color:black">Clear Map</button>
-            </div>
-            <div class="position-relative">
-                <form method="POST" action="/form" style="color:black">
+               <div class="position-relative">
+                <form method="POST" action="/form" style="color:yellow">
                     Price Range (1-4):<br>
                     <input type="number" name="Price">
                     <br>
@@ -68,11 +87,11 @@
                     Popularity:<br>
                     <input type="number" name="Popularity">
                     <br>
-                    <input type="submit" value="Submit"></form>
-                <p style="color:black">Here is your best bet!!!: <strong>{{ variable }}</strong></p>
+                    <input type="submit" value="Submit">
+                </form>
+                <p style="color:white"><font size= "10">Best Prediction: <strong>{{ variable }}</strong></p>
             </div>
-
-            
+            </div>
             <footer class="footer" style="background-color:black";>  
                 <span class="bottom" style="background-color:black; font-size:70px; text-align:center; ">Everything Everywhere</span>  
             </footer>
@@ -96,4 +115,5 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 </div>
+
 
