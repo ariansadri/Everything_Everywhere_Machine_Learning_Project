@@ -78,23 +78,6 @@
                     <button id="my-loc" style="color:black">My Location</button>
                     <button id="clear" style="color:black">Clear Map</button>
                     <div class="position-relative">
-
-                        <!-- <form method="POST" action="/form" style="color:yellow">
-                            Price Range (1-4):<br>
-                            <input type="number" name="Price">
-                            <br>
-                            Rating (1-4.5):<br>
-                            <input type="number" step="0.5" name="Rating">
-                            <br>
-                            Popularity:<br>
-                            <input type="number" name="Popularity">
-                            <br>
-                            <input type="submit" value="Submit">
-                        </form>
-                        <p style="color:white">
-                            <font size="10">Best Prediction: <strong>{{ variable }}</strong>
-                        </p> -->
-                        
                         <form method="POST" action="/form" style="color:yellow">
                             Price Range (1-4):<br>
                             <input type="number" name="Price">
@@ -112,43 +95,25 @@
                         </p>
 
 
-                        <form method="POST" action="/earthquake_page" style="color:black">
+                        <!-- <form method="POST" action="/earthquake_page" style="color:black">
                             Prediction Date:<br>
                             <input type="text" name="Target_Date">
                             <br>
                             <input type="submit" value="Submit">
                         </form>
 
-                        <p style="color:black">EarthQuake: <strong>{{ prediction }}</strong></p>
+                        <p style="color:black">EarthQuake: <strong>{{ prediction }}</strong></p> -->
 
 
 
                     </div>
 
                 </div>
-                   
-               <div id="map" style = "width: 1000px; height: 600px"> </div>
-               <button id="traffic-b" style="color: black">Traffic</button> 
-	           <button id="transit-b" style="color:black">Transit</button> 
-               <button id="bike-b" style="color:black">Bike</button> 
-               <button id="my-loc" style="color:black">My Location</button> 
-               <button id="clear" style="color:black">Clear Map</button>
             </div>
-            <div class="position-relative">
-                <form method="POST" action="/form" style="color:black">
-                    Price Range (1-4):<br>
-                    <input type="number" name="Price">
-                    <br>
-                    Rating (1-4.5):<br>
-                    <input type="number" step="0.1" name="Rating">
-                    <br>
-                    Popularity:<br>
-                    <input type="number" name="Popularity">
-                    <br>
-                    <input type="submit" value="Submit"></form>
-                <!-- <p style="color:black">Here is your best bet!!!: <strong>{{ RestaurantType }}</strong></p> -->
-                <p id="myRestaurantType" style="color:black">Here is your best bet !!!:{{ RestaurantType }}</p>
-            </div>
+            <footer class="footer" style="background-color:black";>  
+                <span class="bottom" style="background-color:black; font-size:70px; text-align:center; ">Everything Everywhere</span>  
+            </footer>
+        
         </div>
     </div>
 </body> 
@@ -163,8 +128,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&libraries=places&callback=initMap" type="text/javascript"></script>
 
-<!-- <script src="../static/js/Zach_js.js"></script> -->
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script> -->
+<script src="../static/js/Zach_js.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 
 </div>

@@ -10,18 +10,17 @@
    <link rel="stylesheet" href="../static/css/style.css">  
 </head>   
   
-<body style="background-color: #5ED5EC">  
-    <div class="wrapper">  
+<body style="background-color: #4F5758">  
+    <div class="wrapper">
         <div class="row"> 
             <div class="col-md-12"> 
                 <h1 class = 'text-center' style="font-size: 70px;  
-                    font-weight: bold;color:black;">Everything Everywhere</h1> 
+                    font-weight: bold;color:black;">Everything Everywhere
+                </h1> 
             </div>
             <div class="hero text-center">
             <p></p>  
         </div>
-
- 
         <div class="container">  
             <div class="row">  
                 <div class="col-md-4">
@@ -37,23 +36,17 @@
                             </div>
                         </form>
                     </div>
-                    <div class="position-relative">
-                        <form method="POST" action="/form" style="color:black">
-                            Price Range (1-4):<br>
-                            <input type="number" name="Price">
-                            <br>
-                            Rating (1-4.5):<br>
-                            <input type="number" step="0.1" name="Rating">
-                            <br>
-                            Popularity:<br>
-                            <input type="number" name="Popularity">
-                            <br>
-                            <input type="submit" value="Submit"></form>
-                        <p style="color:black">Here is your best bet!!!: <strong>{{ variable }}</strong></p>
-                    </div>
+                    <form>
+                        <div class="form-group">
+                            <ul class="list-group" id="filters">
+                                <li class="filter list-group-item">
+                                    <label for="date">Enter a Weather</label>
+                                    <input id="Fake" type="text" size="40" ></input>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
                 </div>  
-
-                
                 <div class="col-md-4">
                     <div>
                         <form>
@@ -66,38 +59,46 @@
                                 </ul>
                             </div>
                         </form>
-                    </div>
-                    <!-- <div class="panel panel-default" style="background-color: #4CAEE3"> 
-                        <h5 style="font-size:15px;color:black;  
-                            text-align:center;">Enter Circle of Interest Radius (Miles)
-                        </h5> 
-                        <input id="RadiusBox" type="text" size="43.9" ></input> 
-                    </div> -->
-                    <form>
-                        <div class="form-group">
-                            <ul class="list-group" id="filters">
-                                <li class="filter list-group-item">
-                                    <label for="date">Enter a City Name</label>
-                                    <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                                </li>
-                            </ul>
-                        </div>
                         <button id="filter-btn" type="button" class="btn btn-default">Search</button>
-                    </form>
+                    </div>
                 </div> 
                 <div class="col-md-4">
                     <form>
-                        <input id="clickMe" type="button" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input>
+                        <!-- <input id="clickMe" type="button" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input> -->
+                        <input id="clickMe" type="button" class="btn btn-default" button style="height:55px;width:180px" value="GO", onclick="getVals()"></input>
                     </form> 
                     
                 </div>
                    
-               <div id="map" style = "width: 1000px; height: 600px"> </div>
+               <div id="map" style = "width: 1200px; height: 600px"> </div>
                <button id="traffic-b" style="color: black">Traffic</button> 
 	           <button id="transit-b" style="color:black">Transit</button> 
                <button id="bike-b" style="color:black">Bike</button> 
                <button id="my-loc" style="color:black">My Location</button> 
                <button id="clear" style="color:black">Clear Map</button>
+               <div class="position-relative">
+                <form method="POST" action="/form" style="color:yellow">
+                    Price Range (1-4):<br>
+                    <input type="number" name="Price">
+                    <br>
+                    Rating (1-4.5):<br>
+                    <input type="number" step="0.1" name="Rating">
+                    <br>
+                    Popularity:<br>
+                    <input type="number" name="Popularity">
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+                <p style="color:white"><font size= "10">Best Prediction: <strong>{{ variable }}</strong></p>
+            </div>
+            <form method="POST" action="/earthquake_page" style="color:black">
+                Prediction Date:<br>
+                <input type="text" name="Target_Date">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+
+            <p style="color:black">EarthQuake: <strong>{{ prediction }}</strong></p>
             </div>
             <footer class="footer" style="background-color:black";>  
                 <span class="bottom" style="background-color:black; font-size:70px; text-align:center; ">Everything Everywhere</span>  
@@ -122,4 +123,5 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 </div>
+
 
