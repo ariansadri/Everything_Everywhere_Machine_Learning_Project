@@ -33,6 +33,7 @@ body {
 }
 
 
+
 /* The code styles the text at the bottom of the footer */
 
 .footer>.bottom {
@@ -110,7 +111,7 @@ select {
     padding: 20px;
     margin: 0;
     background: black;
-    background-image: url("../images/nasa.jpg");
+    background-image: url("../images/ml1.jpg");
     background-attachment: fixed;
     background-position: bottom center;
     background-size: cover;
