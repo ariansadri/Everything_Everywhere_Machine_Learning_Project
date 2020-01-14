@@ -87,19 +87,12 @@ def send():
 
         ynew_str = str(ynew[0])
 
-<<<<<<< HEAD
         # d = {'col1': [ynew_str]}
         # df = pd.DataFrame(data=d)
         # df.to_csv('static/js/variable.csv', index=None)
 
 
     return render_template('index.html', RestaurantType=ynew_str)
-=======
-    return render_template('index.html', variable=ynew_str)
->>>>>>> e54998f81bffcc10d5371fd60c8ca404a38dc28f
-
-
-if __name__ == "__main__":
     app.run(debug=True)
 
 
