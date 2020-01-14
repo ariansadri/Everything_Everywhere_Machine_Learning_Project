@@ -66,6 +66,12 @@ def get_food():
     df.dropna(how='any', inplace=True)
     return jsonify(df.to_dict('records'))
 
+# @app.route('/weather')
+# def weather():
+
+
+#     return render_template("Weather.html")
+
 
 @app.route("/form", methods=["GET", "POST"])
 def send():
