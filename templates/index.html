@@ -69,7 +69,8 @@
                     <input type="number" name="Popularity">
                     <br>
                     <input type="submit" value="Submit"></form>
-                <p style="color:black">Here is your best bet!!!: <strong>{{ variable }}</strong></p>
+                <!-- <p style="color:black">Here is your best bet!!!: <strong>{{ RestaurantType }}</strong></p> -->
+                <p id="myRestaurantType" style="color:black">Here is your best bet !!!:{{ RestaurantType }}</p>
             </div>
 
             
@@ -86,14 +87,13 @@
 <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script> 
 
  
-<script src="../static/js/map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async
-    defer></script>
-
-<script src="../static/js/Zach_js.js"></script>
+<script src="../static/js/map_RWK.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&libraries=places&callback=initMap" type="text/javascript"></script>
 
+<!-- <script src="../static/js/Zach_js.js"></script> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 </div>
 

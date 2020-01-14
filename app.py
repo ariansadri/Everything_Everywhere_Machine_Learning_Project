@@ -56,7 +56,7 @@ def send():
         # df.to_csv('static/js/variable.csv', index=None)
 
 
-    return render_template('index.html', variable=ynew_str)
+    return render_template('index.html', RestaurantType=ynew_str)
 
 if __name__ == "__main__":
     app.run(debug=True)
