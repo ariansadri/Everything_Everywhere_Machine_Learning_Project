@@ -55,7 +55,7 @@ def earthquake2():
         forecast = earth_model.forecast(steps=datediff)[0]
         thing = "My forecast for {} is {}".format(future_date, forecast[-1])
 
-    return render_template("index.html", prediction=thing)
+    return render_template("Predict_Earth_Quake.html", prediction=thing)
 # return render_template('Predict_Earth_Quake.html')
 
 
@@ -87,16 +87,12 @@ def send():
 
         ynew_str = str(ynew[0])
 
-<<<<<<< HEAD
         # d = {'col1': [ynew_str]}
         # df = pd.DataFrame(data=d)
         # df.to_csv('static/js/variable.csv', index=None)
 
 
     return render_template('index.html', RestaurantType=ynew_str)
-=======
-    return render_template('index.html', variable=ynew_str)
->>>>>>> e54998f81bffcc10d5371fd60c8ca404a38dc28f
 
 
 if __name__ == "__main__":
