@@ -55,7 +55,7 @@ def get_food():
 @app.route('/weather')
 def weather():
 
-    return render_template("Weather.html")
+    return render_template("weather.html")
 
 
 @app.route("/form", methods=["GET", "POST"])
