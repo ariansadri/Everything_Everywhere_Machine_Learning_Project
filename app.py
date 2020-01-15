@@ -33,6 +33,7 @@ def home_page():
 @app.route("/earthquake_page",  methods=["GET", "POST"])
 def earthquake2():
     global thing
+    thing = ""
     predict_date = ""
 
     if request.method == "POST":
@@ -58,6 +59,7 @@ def get_food():
 @app.route('/weather', methods=["GET", "POST"])
 def weather():
     global weather_thing
+    weather_thing = ""
     weather_predict_date = ""
 
     if request.method == "POST":
