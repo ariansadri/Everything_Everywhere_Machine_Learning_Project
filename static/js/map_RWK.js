@@ -84,7 +84,7 @@ function initMap() {
         marker.setMap(null); 
         marker = addMarker(pos) 
         map.setCenter(pos); 
-        drawCircle(pos.lat, pos.lng, "1", "my-loc2");
+        drawCircle(pos.lat, pos.lng, "2", "my-loc2");     // 01/14/2020
         FullAddress=FindAddress(pos.lat, pos.lng);
       }, function () { 
         handleLocationError(true, infoWindow, map.getCenter()); 
@@ -187,11 +187,11 @@ function drawCircle(xlat, xlng, xradius, xfrom) {
       strokeWeight: 1         // DON'T SHOW CIRCLE BORDER. 
     }); 
   console.log("After Circle Draw");                   // 01/12/2020 RWK along with code below
-  var DumStr=document.getElementById("myRestaurantType");
+  var DumStr=document.getElementById("myRestarauntType");
   xRestType=DumStr.innerText;
-  var pos = xRestType.indexOf("!!!:"); 
-  var TypeStr=xRestType.slice(pos+4)+" ";
-  console.log(TypeStr);
+  var pos = xRestType.indexOf(":");       // 01/14/2020  changed from !!!: to :
+  var TypeStr=xRestType.slice(pos+2)+" ";    // 01/14/2020  changed from +4 to +2
+  console.log("|"+TypeStr+"|");
   var pos2=TypeStr.indexOf(" ");
   console.log(pos2);
   var RestCategory=TypeStr.substr(0,pos2);
@@ -267,7 +267,7 @@ function resturants(xLat, xLng, Radius)
   console.log(map);
   restType=RestType.toLowerCase();
   // restType="mexican";
-  console.log("From Restaurant: ", restType);
+  console.log("From Restaurant: ", "|"+restType+"|", " Circle Radius: ", Radius);
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(
     {location: pyrmont, radius: Radius/2, type: ['restaurant'], keyword:[restType]},
