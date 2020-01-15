@@ -301,7 +301,7 @@ function createMarkers(places, RestType) {
     var ResMarker = new google.maps.Marker({
       map: map,
       icon: image,
-      title: place.name,
+      title: place.name+'\n'+place.vicinity,           // 01/14/2020 RWK
       position: place.geometry.location
     });
 
