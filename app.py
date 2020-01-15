@@ -21,11 +21,11 @@ weather_model = joblib.load("model_weather")
 
 y_new_str = ""
 thing = ""
+weather_thing = ""
 
 
 @app.route("/")
 def home_page():
-
 
     return render_template("index.html")
 
@@ -55,10 +55,21 @@ def get_food():
     return jsonify(df.to_dict('records'))
 
 
-@app.route('/weather')
+@app.route('/weather', methods=["GET", "POST"])
 def weather():
+    global weather_thing
+    weather_predict_date = ""
 
-    return render_template("index_weather.html")
+    if request.method == "POST":
+        weather_predict_date += str(request.form["Weather_Date"])
+        lastdate_weather = "2019-12-31"
+        lastdate_time_weather = datetime.datetime.strptime(lastdate_weather, '%Y-%m-%d')
+        future_date_weather = datetime.datetime.strptime(weather_predict_date, '%Y-%m-%d')
+        datediff = (future_date_weather - lastdate_time_weather).days
+        forecast = weather_model.forecast(steps=datediff)[0]
+        weather_thing = "My forecast for {} is {}".format(future_date_weather, forecast[-1])
+
+    return render_template("index_weather.html", prediction=weather_thing)
 
 
 @app.route("/form", methods=["GET", "POST"])
