@@ -17,6 +17,7 @@ app = Flask(__name__)
 
 model = joblib.load("model_standarized")
 earth_model = joblib.load("model_quakes")
+weather_model = joblib.load("model_weather")
 
 y_new_str = ""
 thing = ""
@@ -24,6 +25,8 @@ thing = ""
 
 @app.route("/")
 def home_page():
+
+
     return render_template("index.html")
 
 
